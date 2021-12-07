@@ -20,8 +20,8 @@ public interface LivreRepository {
 	@RequestMapping(value = "/search/{title}/", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<Iterable<Livre>> searchLivresByName(@PathVariable("title") String title);
 	
-	@RequestMapping(value = "/{title}/{author}/{releasedate}", method = RequestMethod.POST, produces = "application/json")
-	public ResponseEntity<Livre> createLivre(@PathVariable("title") String title,@PathVariable("title") String author, @PathVariable("price") Integer price);
+	@RequestMapping(value = "/{title}/{author}/{releaseDate}", method = RequestMethod.POST, produces = "application/json")
+	public ResponseEntity<Livre> createLivre(@PathVariable("title") String title,@PathVariable("author") String author, @PathVariable("releaseDate") String releaseDate);
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.POST, produces = "application/json")
 	public ResponseEntity<Livre> updateLivre(@PathVariable("id") Integer id, @RequestBody Livre newLivre);
