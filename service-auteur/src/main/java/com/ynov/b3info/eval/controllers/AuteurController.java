@@ -71,4 +71,5 @@ public class AuteurController {
 		
 		return ResponseEntity.ok(auteur);
 	}
+	
 }

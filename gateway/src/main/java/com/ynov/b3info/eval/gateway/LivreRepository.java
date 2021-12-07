@@ -1,4 +1,5 @@
 package com.ynov.b3info.eval.gateway;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.cloud.openfeign.FeignClient;
@@ -20,6 +21,9 @@ public interface LivreRepository {
 	@RequestMapping(value = "/search/{title}/", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<Iterable<Livre>> searchLivresByName(@PathVariable("title") String title);
 	
+	@RequestMapping(value = "/search/{author}/", method = RequestMethod.GET, produces = "application/json")
+	public ResponseEntity<Iterable<Livre>> searchLivreByAuthor(@PathVariable("author") String author);
+	
 	@RequestMapping(value = "/{title}/{author}/{releaseDate}", method = RequestMethod.POST, produces = "application/json")
 	public ResponseEntity<Livre> createLivre(@PathVariable("title") String title,@PathVariable("author") String author, @PathVariable("releaseDate") String releaseDate);
 	
@@ -28,4 +32,8 @@ public interface LivreRepository {
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = "application/json")
 	public ResponseEntity<Livre> deleteLivre(@PathVariable("id") Integer id);
+	
+	@RequestMapping(value = "/find-by-author/{author}", method = RequestMethod.GET, produces = "application/json")
+    List<Livre> findByAuthor(@PathVariable("author") String author);
+	
 }

@@ -32,6 +32,9 @@ public class Livre {
 	public String releaseDate() {
 		return releaseDate;
 	}
+	public void setreleaseDate(String releaseDate) {
+		this.releaseDate = releaseDate;
+	}
 	
 	public void setauthor(String author) {
 		this.author = author;
@@ -39,6 +42,19 @@ public class Livre {
 	
 	public String author() {
 		return author;
+	}
+
+	public String gettitle() {
+		
+		return this.title;
+	}
+	public String getauthor() {
+			
+			return this.author;
+		}
+	public String getreleaseDate() {
+		
+		return this.releaseDate;
 	}
 	
 
