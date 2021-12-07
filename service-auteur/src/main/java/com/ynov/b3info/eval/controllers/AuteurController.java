@@ -8,10 +8,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.ynov.b3info.eval.models.Auteur;
 import com.ynov.b3info.eval.repository.AuteurRepository;
-
+@RestController
+@RequestMapping("/api/auteur")
 public class AuteurController {
 	
 	@Autowired
@@ -42,7 +44,7 @@ public class AuteurController {
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.POST, produces = "application/json")
-	public ResponseEntity<Auteur> updateAuteur(@PathVariable("id") Integer id, @RequestBody Livre newLivre) {
+	public ResponseEntity<Auteur> updateAuteur(@PathVariable("id") Integer id, @RequestBody Auteur newAuteur) {
 		Optional<Auteur> optAuteur = auteurRepository.findById(id);
 		
 		if (optAuteur.isEmpty()) {
