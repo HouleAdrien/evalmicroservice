@@ -4,10 +4,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-public class Livres {
-	
+public class Livre {
+
 	protected Integer id;
-	private String book;
+	private String title;
 	private String releaseDate;
 	private String author;
 	
@@ -21,12 +21,12 @@ public class Livres {
 	this.id = id;
 	}
 	
-	public String book() {
-		return book;
+	public String title() {
+		return title;
 	}
 	
-	public void setbook(String book) {
-		this.book = book;
+	public void settitle(String title) {
+		this.title = title;
 	}
 	
 	public String releaseDate() {
